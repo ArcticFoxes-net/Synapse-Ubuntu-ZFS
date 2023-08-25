@@ -1,0 +1,9 @@
+Package: *
+Pin: origin download.docker.com
+Pin: release o=Docker
+Pin-Priority: 900
+
+# Prevent installation of downstream packages
+Package: docker docker-compose docker.io
+Pin: release *
+Pin-Priority: -1

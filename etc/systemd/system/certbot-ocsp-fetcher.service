@@ -1,0 +1,14 @@
+[Unit]
+Description=Automatic OCSP Fetcher
+After=docker.service
+Requires=network-online.target
+Requires=docker.service
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/local/bin/certbot-ocsp-fetcher -o /etc/nginx/ocsp-cache
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target

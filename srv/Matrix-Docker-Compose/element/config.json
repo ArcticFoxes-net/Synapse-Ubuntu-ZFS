@@ -1,0 +1,41 @@
+{
+    "default_server_config": {
+        "m.homeserver": {
+            "base_url": "https://matrix.arcticfoxes.net",
+            "server_name": "arcticfoxes.net"
+        }
+    },
+    "disable_custom_urls": true,
+    "brand": "ArcticFoxes",
+    "branding": {
+	"welcomeBackgroundUrl": "https://arcticfoxes.net/external_images/background.jpg",
+	"auth_header_logo_url": "https://arcticfoxes.net/external_images/logo.png",
+        "auth_footer_links": [
+         {"text": "Rules and Privacy Policy", "url": "https://arcticfoxes.net"},
+	 {"text": "GitHub", "url": "https://github.com/arcticfoxes-net"},
+	 {"text": "Gitea", "url": "https://git.tommytran.io/arcticfoxes-net"}
+      ]
+    },
+    "integrations_ui_url": null,
+    "integrations_rest_url": null,
+    "integrations_widgets_urls": null,
+    "defaultCountryCode": "US",
+    "showLabsSettings": true,
+    "features": {},
+    "default_federate": true,
+    "default_theme": "dark",
+    "roomDirectory": {
+        "servers": [
+	    "arcticfoxes.net",
+	    "grapheneos.org",
+        "matrix.org"
+        ]
+    },
+    "enable_presence_by_hs_url": {
+	    "https://matrix.org": false,
+        "https://grapheneos.org": false
+    },
+    "settingDefaults": {
+        "breadcrumbs": true
+    }
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Automatic Container Updater
+After=docker.service
+Requires=network-online.target
+Requires=docker.service
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/srv/Matrix-Docker-Compose
+ExecStart=/usr/bin/docker compose pull
+ExecStart=/usr/bin/docker compose up -d
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target

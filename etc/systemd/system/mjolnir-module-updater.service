@@ -1,0 +1,15 @@
+[Unit]
+Description=Automatic Mjolnir Module Updater
+After=docker.service
+Requires=network-online.target
+Requires=docker.service
+
+[Service]
+User=root
+Group=root
+ExecStart=/opt/venvs/matrix-synapse/bin/pip install -U "git+https://github.com/matrix-org/mjolnir.git#egg=mjolnir&subdirectory=synapse_antispam"
+ExecStart=/usr/bin/chmod -R o+rx /opt/venvs/matrix-synapse/lib/python3.10/site-packages/mjolnir
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target

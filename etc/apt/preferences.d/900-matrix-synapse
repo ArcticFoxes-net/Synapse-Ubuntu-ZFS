@@ -1,0 +1,9 @@
+Package: *
+Pin: origin packages.matrix.org
+Pin: release o=matrix.org
+Pin-Priority: 900
+
+# Prevent installation of outdated downstream package
+Package: matrix-synapse
+Pin: release *
+Pin-Priority: -1

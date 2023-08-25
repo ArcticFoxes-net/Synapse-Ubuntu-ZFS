@@ -1,0 +1,4 @@
+Package: *
+Pin: origin storage.googleapis.com
+Pin: release o=Google
+Pin-Priority: 900

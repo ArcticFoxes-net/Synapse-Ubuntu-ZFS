@@ -1,0 +1,1 @@
+deb [signed-by=/usr/share/keyrings/postgresql-debian-repo.gpg] https://apt.postgresql.org/pub/repos/apt jammy-pgdg main

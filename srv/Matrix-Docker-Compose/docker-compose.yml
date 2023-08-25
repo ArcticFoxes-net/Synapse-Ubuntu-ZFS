@@ -1,0 +1,78 @@
+version: '3'
+
+services:
+
+  element:
+    image: vectorim/element-web:latest
+    container_name: element
+    restart: unless-stopped
+    volumes:
+      - ./element/config.json:/app/config.json:Z
+    networks:
+      - element
+    ports:
+      - "127.0.0.1:81:80"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+      - CAP_NET_BIND_SERVICE
+    tmpfs:
+      - /var/run:size=50M,mode=0770,noexec,nosuid,nodev
+      - /var/cache/nginx:size=50M,mode=0770,noexec,nosuid,nodev
+
+  matrix-to:
+    image: ghcr.io/tommytran732/matrix.to
+    container_name: matrix-to
+    restart: unless-stopped
+    networks:
+      - matrix-to
+    ports:
+      - "127.0.0.1:5000:5000"
+    user: 992:992
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  pantalaimon:
+    image: matrixdotorg/pantalaimon:latest
+    container_name: pantalaimon
+    restart: unless-stopped
+    volumes:
+      - ./pantalaimon:/data
+    networks:
+      - pantalaimon
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  mjolnir:
+    image: matrixdotorg/mjolnir:latest
+    container_name: mjolnir
+    restart: unless-stopped
+    volumes:
+      - ./mjolnir:/data
+    depends_on:
+      - pantalaimon
+    networks:
+      - pantalaimon
+    ports:
+      - "127.0.0.1:8081:8081"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+networks:
+  element:
+  matrix-to:
+  pantalaimon:

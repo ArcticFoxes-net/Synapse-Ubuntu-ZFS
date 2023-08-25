@@ -1,0 +1,5 @@
+server_notices:
+  system_mxid_localpart: notices
+  system_mxid_display_name: "ArcticFoxes Notices"
+  system_mxid_avatar_url: "mxc://arcticfoxes.net/YTYUCCfupbUPUiYTxcUlgUZn"
+  room_name: "ArcticFoxes Notices"

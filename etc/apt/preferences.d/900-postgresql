@@ -1,0 +1,4 @@
+Package: *
+Pin: origin apt.postgresql.org
+Pin: release o=apt.postgresql.org
+Pin-Priority: 900

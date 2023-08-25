@@ -1,0 +1,142 @@
+email:
+  # The hostname of the outgoing SMTP server to use. Defaults to 'localhost'.
+  #
+  smtp_host: mail.tommytran.io
+
+  # The port on the mail server for outgoing SMTP. Defaults to 25.
+  #
+  smtp_port: 587
+
+  # Username/password for authentication to the SMTP server. By default, no
+  # authentication is attempted.
+  #
+  smtp_user: "system@arcticfoxes.net"
+  smtp_pass: "REDACTED"
+
+  # Uncomment the following to require TLS transport security for SMTP.
+  # By default, Synapse will connect over plain text, and will then switch to
+  # TLS via STARTTLS *if the SMTP server supports it*. If this option is set,
+  # Synapse will refuse to connect unless the server supports STARTTLS.
+  #
+  require_transport_security: true
+
+  # Uncomment the following to disable TLS for SMTP.
+  #
+  # By default, if the server supports TLS, it will be used, and the server
+  # must present a certificate that is valid for 'smtp_host'. If this option
+  # is set to false, TLS will not be used.
+  #
+  enable_tls: true
+
+  # notif_from defines the "From" address to use when sending emails.
+  # It must be set if email sending is enabled.
+  #
+  # The placeholder '%(app)s' will be replaced by the application name,
+  # which is normally 'app_name' (below), but may be overridden by the
+  # Matrix client application.
+  #
+  # Note that the placeholder must be written '%(app)s', including the
+  # trailing 's'.
+  #
+  notif_from: "ArcticFoxes System <system@arcticfoxes.net>"
+
+  # app_name defines the default value for '%(app)s' in notif_from and email
+  # subjects. It defaults to 'Matrix'.
+  #
+  app_name: Matrix
+
+  # Uncomment the following to enable sending emails for messages that the user
+  # has missed. Disabled by default.
+  #
+  #enable_notifs: true
+
+  # Uncomment the following to disable automatic subscription to email
+  # notifications for new users. Enabled by default.
+  #
+  #notif_for_new_users: false
+
+  # Custom URL for client links within the email notifications. By default
+  # links will be based on "https://matrix.to".
+  #
+  # (This setting used to be called riot_base_url; the old name is still
+  # supported for backwards-compatibility but is now deprecated.)
+  #
+  client_base_url: "https://element.arcticfoxes.net"
+
+  # Configure the time that a validation email will expire after sending.
+  # Defaults to 1h.
+  #
+  #validation_token_lifetime: 15m
+
+  # The web client location to direct users to during an invite. This is passed
+  # to the identity server as the org.matrix.web_client_location key. Defaults
+  # to unset, giving no guidance to the identity server.
+  #
+  invite_client_location: https://element.arcticfoxes.net
+
+  # Subjects to use when sending emails from Synapse.
+  #
+  # The placeholder '%(app)s' will be replaced with the value of the 'app_name'
+  # setting above, or by a value dictated by the Matrix client application.
+  #
+  # If a subject isn't overridden in this configuration file, the value used as
+  # its example will be used.
+  #
+  #subjects:
+
+    # Subjects for notification emails.
+    #
+    # On top of the '%(app)s' placeholder, these can use the following
+    # placeholders:
+    #
+    #   * '%(person)s', which will be replaced by the display name of the user(s)
+    #      that sent the message(s), e.g. "Alice and Bob".
+    #   * '%(room)s', which will be replaced by the name of the room the
+    #      message(s) have been sent to, e.g. "My super room".
+    #
+    # See the example provided for each setting to see which placeholder can be
+    # used and how to use them.
+    #
+    # Subject to use to notify about one message from one or more user(s) in a
+    # room which has a name.
+    #message_from_person_in_room: "[%(app)s] You have a message on %(app)s from %(person)s in the %(room)s room..."
+    #
+    # Subject to use to notify about one message from one or more user(s) in a
+    # room which doesn't have a name.
+    #message_from_person: "[%(app)s] You have a message on %(app)s from %(person)s..."
+    #
+    # Subject to use to notify about multiple messages from one or more users in
+    # a room which doesn't have a name.
+    #messages_from_person: "[%(app)s] You have messages on %(app)s from %(person)s..."
+    #
+    # Subject to use to notify about multiple messages in a room which has a
+    # name.
+    #messages_in_room: "[%(app)s] You have messages on %(app)s in the %(room)s room..."
+    #
+    # Subject to use to notify about multiple messages in multiple rooms.
+    #messages_in_room_and_others: "[%(app)s] You have messages on %(app)s in the %(room)s room and others..."
+    #
+    # Subject to use to notify about multiple messages from multiple persons in
+    # multiple rooms. This is similar to the setting above except it's used when
+    # the room in which the notification was triggered has no name.
+    #messages_from_person_and_others: "[%(app)s] You have messages on %(app)s from %(person)s and others..."
+    #
+    # Subject to use to notify about an invite to a room which has a name.
+    #invite_from_person_to_room: "[%(app)s] %(person)s has invited you to join the %(room)s room on %(app)s..."
+    #
+    # Subject to use to notify about an invite to a room which doesn't have a
+    # name.
+    #invite_from_person: "[%(app)s] %(person)s has invited you to chat on %(app)s..."
+
+    # Subject for emails related to account administration.
+    #
+    # On top of the '%(app)s' placeholder, these one can use the
+    # '%(server_name)s' placeholder, which will be replaced by the value of the
+    # 'server_name' setting in your Synapse configuration.
+    #
+    # Subject to use when sending a password reset email.
+    #password_reset: "[%(server_name)s] Password reset"
+    #
+    # Subject to use when sending a verification email to assert an address's
+    # ownership.
+    #email_validation: "[%(server_name)s] Validate your email"
