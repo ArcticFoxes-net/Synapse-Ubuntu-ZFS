@@ -2,4 +2,4 @@
 # Any changes you make will be preserved.
 
 # Whether to report homeserver usage statistics.
-report_stats: fals
+report_stats: false
