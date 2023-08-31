@@ -36,3 +36,4 @@ log_config: "/etc/matrix-synapse/log.yaml"
 signing_key_path: "/etc/matrix-synapse/homeserver.signing.key"
 trusted_key_servers:
   - server_name: "matrix.org"
+suppress_key_server_warning: true
