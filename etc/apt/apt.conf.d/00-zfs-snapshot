@@ -1,0 +1,2 @@
+# Create a ZFS snapshot before invoking dpkg
+DPkg::Pre-Invoke { "zfs snapshot zroot/ROOT/ubuntu@apt_$(date -u +%Y-%m-%dT%H:%M:%SZ)"; };
