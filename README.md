@@ -5,6 +5,7 @@ This configuration does not include some hardening configurations, as those are 
 
 **Notes**:
 - snap ufw blocks Docker by default. ArcticFoxes's Matrix server uses .deb ufw instead.
+- Use the .deb certbot package so that you can apply systemd hardening.
 - A lot of these configuration files use ArcticFoxes's domain. If you are adopting this to your own system, make sure that you replace them.
 - The Certbot-OCSP-Fetcher script can be found [here](https://github.com/GrapheneOS/infrastructure/blob/main/certbot-ocsp-fetcher)
 - You need to create a `postgres-socket` and add the `postgres` and `matrix-synapse` user to it.
