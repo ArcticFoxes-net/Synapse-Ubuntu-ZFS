@@ -25,11 +25,10 @@ listeners:
 database:
   name: psycopg2
   args:
-    user: synapse
-    password: REDACTED
-    host: 127.0.0.1
-    database: synapse
-    port: 5432
+    user: 'synapse'
+    password: 'REDACTED'
+    host: '/var/run/postgresql'
+    database: 'synapse'
     cp_min: 5
     cp_max: 10
 log_config: "/etc/matrix-synapse/log.yaml"
