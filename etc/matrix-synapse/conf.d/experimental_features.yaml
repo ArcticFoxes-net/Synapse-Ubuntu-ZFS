@@ -1,0 +1,17 @@
+experimental_features:
+  msc3026_enabled: true
+  msc3266_enabled: true
+  msc2654_enabled: true
+  msc2815_enabled: true
+  msc3391_enabled: true
+  msc3773_enabled: true
+  msc3664_enabled: true
+  msc3848_enabled: true
+  msc3881_enabled: true
+  msc3874_enabled: true
+  msc3890_enabled: true
+  msc3381_polls_enabled: true
+  msc3912_enabled: true
+  msc1767_enabled: true
+  msc3981_recurse_relations: true
+  msc4010_push_rules_account_data: true
