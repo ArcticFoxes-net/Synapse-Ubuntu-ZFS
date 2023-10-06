@@ -1,17 +1,19 @@
 experimental_features:
-  msc3026_enabled: true
-  msc3266_enabled: true
-  msc2654_enabled: true
-  msc2815_enabled: true
-  msc3391_enabled: true
-  msc3773_enabled: true
-  msc3664_enabled: true
-  msc3848_enabled: true
-  msc3881_enabled: true
-  msc3874_enabled: true
-  msc3890_enabled: true
-  msc3381_polls_enabled: true
-  msc3912_enabled: true
-  msc1767_enabled: true
-  msc3981_recurse_relations: true
-  msc4010_push_rules_account_data: true
+  msc3026_enabled: true # "Busy" presence state
+  msc3266_enabled: true # Room summary API
+  msc3720_enabled: false # Account status endpoint
+  msc2654_enabled: true # Unread counts
+  msc2815_enabled: true # Allow room moderators to view redacted event content
+  msc3391_enabled: true # Deleting account data
+  msc3773_enabled: true # Notifications for threads
+  msc3664_enabled: true # Notifications for relations
+  msc3848_enabled: true # Introduce errcodes for specific event sending failures
+  msc3881_enabled: true # Remotely toggle push notifications for another client
+  msc3874_enabled: true # Filtering the /messages API by relation type
+  msc3890_enabled: true # Remotely silence local notifications
+  msc3381_polls_enabled: true # MSC3930: Polls push rules/notifications
+  msc3912_enabled: true # Relation-based redactions
+  msc1767_enabled: true # Extensible events
+  msc3967_enabled: false # Do not require UIA when first uploading cross signing keys
+  msc3981_recurse_relations: true # Recurse relations
+  msc4010_push_rules_account_data: true # Do not allow setting m.push_rules account data
