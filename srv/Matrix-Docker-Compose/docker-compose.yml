@@ -72,6 +72,24 @@ services:
     cap_drop:
       - ALL
 
+  syncv3:
+    image: ghcr.io/matrix-org/sliding-sync:latest
+    container_name: syncv3
+    restart: unless-stopped
+    env_file: ./syncv3.env
+    volumes:
+      - /var/run/postgresql:/var/run/postgresql:ro
+    group_add:
+      - "1006" # postgres-socket, https://github.com/docker/compose/issues/7277
+    runtime: "runsc-kvm --host-uds=open"
+    ports:
+      - "127.0.0.1:8008:8008"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
   glassrom-pantalaimon:
     image: matrixdotorg/pantalaimon:latest
     container_name: glassrom-pantalaimon
