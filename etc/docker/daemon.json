@@ -1,9 +1,6 @@
 {
     "default-runtime": "runsc-kvm",
     "runtimes": {
-        "runsc": {
-            "path": "/usr/bin/runsc"
-        },
         "runsc-kvm": {
             "path": "/usr/bin/runsc",
             "runtimeArgs": [
