@@ -21,7 +21,7 @@ services:
       - CHOWN
       - SETGID
       - SETUID
-      - CAP_NET_BIND_SERVICE
+      - NET_BIND_SERVICE
     tmpfs:
       - /var/run:size=50M,mode=0770,noexec,nosuid,nodev
       - /var/cache/nginx:size=50M,mode=0770,noexec,nosuid,nodev
