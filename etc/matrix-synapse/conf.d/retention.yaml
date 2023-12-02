@@ -2,5 +2,6 @@ retention:
   enabled: false
 
 redaction_retention_period: 30d
+forgotten_room_retention_period: 7d
 user_ips_max_age: 60d
 delete_stale_devices_after: 120d
