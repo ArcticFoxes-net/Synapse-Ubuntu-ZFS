@@ -1,5 +1,3 @@
-version: '3'
-
 services:
 
   element:
@@ -114,6 +112,22 @@ services:
       - glassrom-pantalaimon
     networks:
       - glassrom-pantalaimon
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  honoroit-hssupport:
+    image: registry.gitlab.com/etke.cc/honoroit:latest
+    container_name: honoroit-hssupport
+    restart: unless-stopped
+    env_file: ./honoroit-hssupport.env
+    volumes:
+      - /var/run/postgresql:/var/run/postgresql:ro
+    group_add:
+      - "1006" # postgres-socket, https://github.com/docker/compose/issues/7277
+    runtime: "runsc-kvm --host-uds=open"
     read_only: true
     security_opt:
       - no-new-privileges:true
