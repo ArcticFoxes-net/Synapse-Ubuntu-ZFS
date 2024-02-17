@@ -6,6 +6,7 @@
     }
   },
   "disable_custom_urls": true,
+  "disable_3pid_login": true,
   "brand": "ArcticFoxes",
   "branding": {
     "welcome_background_url": "https://arcticfoxes.net/external_images/background.jpg",
