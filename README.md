@@ -1,7 +1,7 @@
 # Synapse-Ubuntu-ZFS
 Server configurations for Ubuntu 22.04 running Synapse
 
-This configuration does not include some hardening configurations, as those are maintained [here](https://github.com/tommytran732/Linux-Setup-Scripts/blob/main/Ubuntu-22.04-Server.sh).
+This configuration does not include some hardening configurations, as those ~~are~~ were maintained [here](https://github.com/TommyTran732/Linux-Setup-Scripts/blob/2f5a5ab10a13035ab467bfcb6d95984d3050b27a/Ubuntu-22.04-Server.sh).
 
 **Notes**:
 - snap ufw blocks Docker by default. ArcticFoxes's Matrix server uses .deb ufw instead.
