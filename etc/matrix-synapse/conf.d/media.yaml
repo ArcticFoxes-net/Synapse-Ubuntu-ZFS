@@ -2,7 +2,7 @@ max_upload_size: 30M
 media_store_path: /var/lib/matrix-synapse/media
 media_retention:
     local_media_lifetime: 1y
-    remote_media_lifetime: 1y
+    remote_media_lifetime: 26w
 url_preview_enabled: true
 url_preview_ip_range_blacklist:
   - '127.0.0.0/8'
