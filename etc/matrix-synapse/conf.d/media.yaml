@@ -24,3 +24,4 @@ url_preview_ip_range_blacklist:
   - '2001:db8::/32'
   - 'ff00::/8'
   - 'fec0::/10'
+enable_authenticated_media: false
