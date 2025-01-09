@@ -70,36 +70,6 @@ services:
     cap_drop:
       - ALL
 
-  glassrom-pantalaimon:
-    image: matrixdotorg/pantalaimon:latest
-    container_name: glassrom-pantalaimon
-    restart: unless-stopped
-    volumes:
-      - ./glassrom/pantalaimon:/data
-    networks:
-      - glassrom-pantalaimon
-    read_only: true
-    security_opt:
-      - no-new-privileges:true
-    cap_drop:
-      - ALL
-
-  glassrom-mjolnir:
-    image: matrixdotorg/mjolnir:latest
-    container_name: glassrom-mjolnir
-    restart: unless-stopped
-    volumes:
-      - ./glassrom/mjolnir:/data
-    depends_on:
-      - glassrom-pantalaimon
-    networks:
-      - glassrom-pantalaimon
-    read_only: true
-    security_opt:
-      - no-new-privileges:true
-    cap_drop:
-      - ALL
-
   honoroit-hssupport:
     image: registry.gitlab.com/etke.cc/honoroit:latest
     container_name: honoroit-hssupport
@@ -120,4 +90,3 @@ networks:
   element:
   matrix-to:
   pantalaimon:
-  glassrom-pantalaimon:
