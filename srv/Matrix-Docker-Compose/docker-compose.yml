@@ -48,12 +48,12 @@ services:
     cap_drop:
       - ALL
 
-  mjolnir:
+  mjolnir_PrivSec-dev:
     image: matrixdotorg/mjolnir:v1.8.3 # https://github.com/matrix-org/mjolnir/issues/556
-    container_name: mjolnir
+    container_name: mjolnir_PrivSec-dev
     restart: unless-stopped
     volumes:
-      - ./mjolnir:/data
+      - ./mjolnir_PrivSec-dev:/data
     depends_on:
       - pantalaimon
     networks:
@@ -67,6 +67,7 @@ services:
       - ALL
 
   honoroit-hssupport:
+    profiles: ["disabled"]
     image: registry.gitlab.com/etke.cc/honoroit:latest
     container_name: honoroit-hssupport
     restart: unless-stopped
@@ -76,6 +77,18 @@ services:
     group_add:
       - "1006" # postgres-socket, https://github.com/docker/compose/issues/7277
     runtime: "runsc-kvm --host-uds=open"
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+  mjolnir_MacDonald:
+    image: matrixdotorg/mjolnir:v1.8.3 # https://github.com/matrix-org/mjolnir/issues/556
+    container_name: mjolnir_MacDonald
+    restart: unless-stopped
+    volumes:
+      - ./mjolnir_MacDonald:/data
     read_only: true
     security_opt:
       - no-new-privileges:true
