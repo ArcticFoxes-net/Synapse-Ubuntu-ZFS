@@ -14,6 +14,7 @@ experimental_features:
   msc3381_polls_enabled: true # MSC3930: Polls push rules/notifications
   msc3912_enabled: true # Relation-based redactions
   msc1767_enabled: true # Extensible events
-  msc3967_enabled: false # Do not require UIA when first uploading cross signing keys
-  msc3981_recurse_relations: true # Recurse relations
-  msc4010_push_rules_account_data: true # Do not allow setting m.push_rules account data
+  msc4210_enabled: false # Remove legacy mentions
+  msc4222_enabled: true # Adding `state_after` to sync v2
+  msc4076_enabled: true # Let E2EE clients calculate app badge counts themselves
+  msc4155_enabled: true # Invite filtering
