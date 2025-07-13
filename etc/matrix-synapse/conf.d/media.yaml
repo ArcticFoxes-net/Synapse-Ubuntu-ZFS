@@ -1,8 +1,11 @@
-max_upload_size: 30M
 media_store_path: /var/lib/matrix-synapse/media
+max_upload_size: 30M
 media_retention:
     local_media_lifetime: 1y
     remote_media_lifetime: 26w
+
+enable_authenticated_media: false
+
 url_preview_enabled: true
 url_preview_ip_range_blacklist:
   - '127.0.0.0/8'
@@ -24,4 +27,6 @@ url_preview_ip_range_blacklist:
   - '2001:db8::/32'
   - 'ff00::/8'
   - 'fec0::/10'
-enable_authenticated_media: false
+
+prevent_media_downloads_from: []
+# We actually block media from several servers, but for obvious reasons the list is not public
