@@ -17,4 +17,7 @@ experimental_features:
   msc4210_enabled: false # Remove legacy mentions
   msc4222_enabled: true # Adding `state_after` to sync v2
   msc4076_enabled: true # Let E2EE clients calculate app badge counts themselves
+  msc4277_enabled: true # Harmonizing the reporting endpoints
+  msc4235_enabled: true # Add `via` param to hierarchy endpoint
+  msc4267_enabled: true # Advertise `forget_rooms_on_leave` config
   msc4155_enabled: true # Invite filtering
