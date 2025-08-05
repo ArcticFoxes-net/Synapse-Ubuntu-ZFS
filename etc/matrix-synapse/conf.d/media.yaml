@@ -1,8 +1,14 @@
 media_store_path: /var/lib/matrix-synapse/media
 max_upload_size: 30M
+media_upload_limits:
+  - time_period: 1h
+    max_size: 100M
+  - time_period: 1w
+    max_size: 1G
+
 media_retention:
     local_media_lifetime: 1y
-    remote_media_lifetime: 26w
+    remote_media_lifetime: 6w
 
 enable_authenticated_media: false
 
