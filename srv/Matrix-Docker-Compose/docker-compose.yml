@@ -1,7 +1,7 @@
 services:
 
   element:
-    image: ghcr.io/polarix-containers/element-web:latest
+    image: ghcr.io/element-hq/element-web:latest
     container_name: element
     restart: unless-stopped
     volumes:
@@ -10,7 +10,7 @@ services:
     networks:
       - element
     ports:
-      - "127.0.0.1:81:8080"
+      - "127.0.0.1:81:80"
     read_only: true
     security_opt:
       - no-new-privileges:true
