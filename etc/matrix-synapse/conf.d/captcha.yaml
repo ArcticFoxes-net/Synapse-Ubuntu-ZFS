@@ -1,5 +1,0 @@
-enable_registration_captcha: false
-
-recaptcha_public_key: "6LdZ9g4gAAAAAFolQ1vLYBP3Z_Q6KLBjk4KqoQdy"
-recaptcha_private_key: "REDACTED"
-#recaptcha_siteverify_api: "https://www.recaptcha.net/recaptcha/api/siteverify"

@@ -1,6 +1,11 @@
 enable_registration: true
+allow_underscore_prefixed_registration: true
+
 registration_requires_token: true
 
-allow_underscore_prefixed_registration: true
+enable_registration_captcha: false
+recaptcha_public_key: "6LdZ9g4gAAAAAFolQ1vLYBP3Z_Q6KLBjk4KqoQdy"
+recaptcha_private_key: "REDACTED"
+#recaptcha_siteverify_api: "https://www.recaptcha.net/recaptcha/api/siteverify"
 
 allow_guest_access: false
