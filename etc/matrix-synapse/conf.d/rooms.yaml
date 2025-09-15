@@ -1,3 +1,5 @@
 forget_rooms_on_leave: true
 
 allow_public_rooms_over_federation: true
+
+default_room_version: '12'
