@@ -1,2 +1,8 @@
 allow_device_name_lookup_over_federation: true
 
+user_directory:
+  search_all_users: false
+  prefer_local_users: true
+
+presence:
+  enabled: no
