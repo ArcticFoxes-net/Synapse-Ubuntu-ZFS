@@ -3,3 +3,9 @@ forget_rooms_on_leave: true
 allow_public_rooms_over_federation: true
 
 default_room_version: '12'
+
+alias_creation_rules:
+- action: allow
+
+room_list_publication_rules:
+- action: allow
