@@ -48,12 +48,12 @@ services:
     cap_drop:
       - ALL
 
-  mjolnir_PrivSec-dev:
+  mjolnir-general:
     image: matrixdotorg/mjolnir:v1.8.3 # https://github.com/matrix-org/mjolnir/issues/556
-    container_name: mjolnir_PrivSec-dev
+    container_name: mjolnir-general
     restart: unless-stopped
     volumes:
-      - ./mjolnir_PrivSec-dev:/data
+      - ./mjolnir-general:/data
     depends_on:
       - pantalaimon
     networks:
