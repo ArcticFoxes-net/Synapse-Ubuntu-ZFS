@@ -21,3 +21,4 @@ experimental_features:
   msc4235_enabled: true # Add `via` param to hierarchy endpoint
   msc4267_enabled: true # Advertise `forget_rooms_on_leave` config
   msc4155_enabled: true # Invite filtering
+  msc4380_enabled: true # Invite blocking
