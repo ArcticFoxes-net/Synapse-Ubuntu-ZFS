@@ -1,0 +1,103 @@
+homeserver:
+  # The canonical homeserver domain name
+  server_name: arcticfoxes.net
+  url: https://matrix.arcticfoxes.net
+
+user:
+  mxid_localpart: macdonald-baibot
+  password: REDACTED
+
+  # The name the bot uses as a display name and when it refers to itself.
+  # Leave empty to use the default (baibot).
+  name: "Old MacDonald's AI Chatbot"
+
+  # An optional path to an image file to be used as a custom avatar image.
+  # - null or empty string: use the default avatar
+  # - "keep": don't touch the avatar, keep whatever is already set
+  # - any other value: path to a custom avatar image file
+  avatar: null
+
+  encryption:
+    # An optional passphrase to use for backing up and recovering the bot's encryption keys.
+    # You can use any string here.
+    #
+    # If set to null, the recovery module will not be used and losing your session/database (see persistence)
+    # will mean you lose access to old messages in encrypted room.
+    #
+    # Changing this subsequently will also cause you to lose access to old messages in encrypted rooms.
+    # If you really need to change this:
+    # - Set `encryption_recovery_reset_allowed` to `true` and adjust the passphrase
+    # - Remove your session file and database (see persistence)
+    # - Restart the bot
+    # - Then restore `encryption_recovery_reset_allowed` to `false` to prevent accidental resets in the future
+    recovery_passphrase: REDACTED
+  
+    # An optional flag to reset the encryption recovery passphrase.
+    recovery_reset_allowed: false
+
+# Command prefix. Leave empty to use the default (!bai).
+command_prefix: "!bai"
+
+room:
+  # Whether the bot should send an introduction message after joining a room.
+  post_join_self_introduction_enabled: true
+
+access:
+  # Space-separated list of MXID patterns which specify who is an admin.
+  admin_patterns:
+    - "REDACTED"
+
+persistence:
+  # This is unset here, because we expect the configuration to come from an environment variable (BAIBOT_PERSISTENCE_DATA_DIR_PATH).
+  # In your setup, you may wish to set this to a directory path.
+  data_dir_path: /data
+
+  # An optional secret for encrypting the bot's session data (stored in data_dir_path).
+  # This must be 32-bytes (64 characters when HEX-encoded).
+  # Generate it with: `openssl rand -hex 32`
+  # Leave null or empty to avoid using encryption.
+  # Changing this subsequently requires that you also throw away all data stored in data_dir_path.
+  session_encryption_key: REDACTED
+
+  # An optional secret for encrypting bot configuration stored in Matrix's account data.
+  # This must be 32-bytes (64 characters when HEX-encoded).
+  # Generate it with: `openssl rand -hex 32`
+  # Leave null or empty to avoid using encryption.
+  # Changing this subsequently will make you lose your configuration.
+  config_encryption_key: REDACTED
+
+agents:
+  # A list of statically-defined agents.
+  #
+  # Below are a few common choices on popular providers, preconfigured for development purposes (see docs/development.md).
+  # You may enable some of the ones you see below or define others.
+  # You can also leave this list empty and only define agents dynamically (via chat).
+  #
+  # Uncomment one or more of these and potentially adjust their configuration (API key, etc).
+  # Consider setting `initial_global_config.handler.*` to an agent that you enable here.
+  static_definitions: []
+
+# Initial global configuration. This only affects the first run of the bot.
+# Configuration is later managed at runtime.
+initial_global_config:
+  handler:
+    catch_all: null
+    text_generation: null
+    text_to_speech: null
+    speech_to_text: null
+    image_generation: null
+
+  # Space-separated list of MXID patterns which specify who can use the bot.
+  # By default, we let anyone on the homeserver use the bot.
+  user_patterns:
+    - "REDACTED"
+
+# Controls logging.
+#
+# Sets all tracing targets (external crates) to warn, and our own logs to debug.
+# For even more verbose logging, one may also use trace.
+#
+# matrix_sdk_crypto may be chatty and could be added with an error level.
+#
+# Learn more here: https://stackoverflow.com/a/73735203
+logging: warn,mxlink=debug,baibot=debug
