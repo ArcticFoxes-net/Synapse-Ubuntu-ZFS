@@ -83,6 +83,21 @@ services:
     cap_drop:
       - ALL
 
+  baibot-macdonald:
+    image: ghcr.io/etkecc/baibot:latest
+    container_name: baibot-macdonald
+    restart: unless-stopped
+    volumes:
+      - ./baibot-macdonald/config.yml:/app/config.yml:ro
+      - ./baibot-macdonald/data:/data
+    tmpfs:
+      - /tmp:size=1024m,noexec,nosuid
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
 networks:
   element:
   matrix-to:
