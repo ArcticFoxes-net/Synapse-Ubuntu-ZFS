@@ -9,8 +9,8 @@
   "disable_3pid_login": true,
   "brand": "ArcticFoxes",
   "branding": {
-    "welcome_background_url": "https://arcticfoxes.net/external_images/background.jpg",
-    "auth_header_logo_url": "https://arcticfoxes.net/external_images/logo.png",
+    "welcome_background_url": "https://raw.githubusercontent.com/ArcticFoxes-net/arcticfoxes.net/refs/heads/main/external_images/background.jpg",
+    "auth_header_logo_url": "https://raw.githubusercontent.com/ArcticFoxes-net/arcticfoxes.net/refs/heads/main/external_images/logo.png",
     "auth_footer_links": [
       {
         "text": "Rules and Privacy Policy",
